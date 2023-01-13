@@ -7,14 +7,15 @@ int main()
 {
     int age = 0, x = 0, i = 0, calorieSum = 0, calorieValue = 0, randomNumber = 0; //declaring variables 
     cout << "My name is Jacob Block and my major is Aerospace Engineering" << endl; //cout statement to print name and major
-    while (x < 1) {
-        cout << "How old are you?" << endl;
-        cin >> age;
-        if (age < 0 || age > 120) {
+        while (true) {
+            cout << "How old are you?" << endl;
+            cin >> age;
+            if (age >= 0 && age <= 120) {
+                break;
+            }
             cout << "Invalid entry, please enter an age between 0 and 120." << endl;
         }
-        else x++;
-    } //Asks user to enter their age and does not accept an age less than 0 or greater than 120
+     */ //Asks user to enter their age and does not accept an age less than 0 or greater than 120
 
     for (i = 2; i <= 40; i++) {
         if (i % 2 == 0) {
