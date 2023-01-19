@@ -7,10 +7,10 @@ using namespace std;
 struct Money {
 	double dollars;
 	double cents;
-	
+
 };
 
-void getValues(double field) {
+double getValues(double field) {
 	cin >> field;
 	while (!cin) {
 		cin.clear();
@@ -22,48 +22,26 @@ void getValues(double field) {
 		field = 1;
 		cout << "Error: negative values are not allowed, setting field to 1." << endl;
 	}
+	return field;
 }
 
 int main() {
-	Money person1;
-	Money person2;
+	Money person1 = { 0, 0 };
+	Money person2 = { 0, 0 };
 	Money sum;
 	double person1Total = 0;
 	double person2Total = 0;
 	double sumTotal = 0;
 	cout << "Enter dollars: ";
-	cin >> person1.dollars;
-	getValues(person1.dollars);
-	/*while (!cin) {
-		cin.clear();
-		cin.ignore(INT_MAX, '\n');
-		cout << "Error. Try again: ";
-		cin >> person1.dollars;
-	}
-	if (person1.dollars < 0) {
-		person1.dollars = 1;
-		cout << "Error: negative values are not allowed, setting dollars to 1." << endl;
-	}*/
+	person1.dollars = getValues(person1.dollars);
 	cout << "Enter cents: ";
-	cin >> person1.cents;
-	if (person1.cents < 0) {
-		person1.cents = 1;
-		cout << "Error: negative values are not allowed, setting cents to 1." << endl;
-	}
+	person1.cents = getValues(person1.cents);
 	person1Total = person1.dollars + (person1.cents * .01);
 	printf("You entered: $%0.2f\n", person1Total);
 	cout << "Enter dollars: ";
-	cin >> person2.dollars;
-	if (person2.dollars < 0) {
-		person2.dollars = 1;
-		cout << "Error: negative values are not allowed, setting dollars to 1." << endl;
-	}
+	person2.dollars = getValues(person2.dollars);
 	cout << "Enter cents: ";
-	cin >> person2.cents;
-	if (person2.cents < 0) {
-		person2.cents = 1;
-		cout << "Error: negative values are not allowed, setting cents to 1." << endl;
-	}
+	person2.cents = getValues(person2.cents);
 	person2Total = person2.dollars + (person2.cents * .01);
 	printf("You entered: $%0.2f\n", person2Total);
 	sum.dollars = person1.dollars + person2.dollars;
