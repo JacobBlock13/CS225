@@ -45,8 +45,8 @@ public:
     {
         srand(time(0));
         int randomNumber = rand() % 101;
-        if((fuelInTank - (randomNumber/milesPerGallon)) < fuelTankCapacity) {
-            cout<<"Ran out of gas after"<<milesPerGallon*fuelInTank<<"miles."<<endl;
+        if((milesPerGallon*fuelInTank) < randomNumber) {
+            cout<<"Ran out of gas after "<<milesPerGallon*fuelInTank<<" miles."<<endl;
             fuelInTank = 0;
             odometer = milesPerGallon*fuelInTank;
         }
@@ -61,7 +61,7 @@ public:
         if(distance < 0) {
             cout<<"Cannot drive a negative distance sorry.";
         }
-        else if((fuelInTank - (distance/milesPerGallon)) < fuelTankCapacity) {
+        else if((milesPerGallon*fuelInTank) < distance) {
             cout<<"Ran out of gas after "<<milesPerGallon*fuelInTank<<" miles."<<endl;
             fuelInTank = 0;
             odometer = milesPerGallon*fuelInTank;
