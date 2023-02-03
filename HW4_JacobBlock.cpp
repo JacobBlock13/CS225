@@ -47,8 +47,8 @@ public:
         int randomNumber = rand() % 101;
         if((milesPerGallon*fuelInTank) < randomNumber) {
             cout<<"Ran out of gas after "<<milesPerGallon*fuelInTank<<" miles."<<endl;
+            odometer += milesPerGallon*fuelInTank;
             fuelInTank = 0;
-            odometer = milesPerGallon*fuelInTank;
         }
         else {
         fuelInTank = fuelInTank - (randomNumber/milesPerGallon);
@@ -63,8 +63,8 @@ public:
         }
         else if((milesPerGallon*fuelInTank) < distance) {
             cout<<"Ran out of gas after "<<milesPerGallon*fuelInTank<<" miles."<<endl;
+            odometer += milesPerGallon*fuelInTank;
             fuelInTank = 0;
-            odometer = milesPerGallon*fuelInTank;
         }
         else {
         odometer += distance;
