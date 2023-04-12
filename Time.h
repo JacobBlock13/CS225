@@ -19,6 +19,14 @@ Time::Time(){
 }
 
 Time::Time(int h, int m){
+    while (m > 60) {
+        m -= 60;
+        h++;
+    }
+    while (m < 0) {
+        h--;
+        m += 60;
+    }
     hours = h;
     minutes = m;
 }
